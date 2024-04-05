@@ -1,0 +1,99 @@
+\documentclass[a4paper,12pt,openright,oneside]{book}
+\usepackage[a4paper,margin=2in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage[square,numbers,super]{natbib}
+\usepackage[italian]{babel}
+% le immagini vanno tutte in images/
+\graphicspath{ {images/} }
+\usepackage{fullpage}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphics}
+\usepackage{amsmath}
+\usepackage{amstext}
+\usepackage{lscape}
+\usepackage[nottoc]{tocbibind}
+\usepackage{engrec}
+\usepackage{microtype}
+\usepackage{enumerate}
+\usepackage[hidelinks]{hyperref}
+\usepackage{marginnote}
+\usepackage{float}
+\usepackage{setspace}
+\usepackage{url}
+\usepackage{pdfpages}
+%\usepackage{mathptmx} % font Times New Roman (simile)
+%\usepackage{amsfonts}
+%\usepackage{amssymb}
+\usepackage{times}
+\usepackage{placeins} % per far si che le immagini rimangano nella section
+\usepackage[bottom]{footmisc}
+\usepackage{subcaption}
+\usepackage{verbatim}
+
+
+
+
+\def\UrlBreaks{\do\/\do-}
+
+
+% un po' di estetica...
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\headsep}{0.35in}
+\let\MakeUppercase\relax
+\renewcommand\sectionmark[1]{}
+
+% blocchi di codice
+\usepackage{listings}
+\lstset{
+	breaklines=true, 
+	frame=single, 
+	numbers=left,
+	tabsize=2,
+	basicstyle=\scriptsize\small,
+	showstringspaces=false
+}
+
+\frenchspacing
+\thispagestyle{plain}
+
+%% per aggiungere pagine vuote
+\usepackage{afterpage}
+\newcommand\myemptypage{
+    \null
+    \thispagestyle{empty}
+    \addtocounter{page}{-1}
+    \newpage
+    }
+
+
+\begin{document}
+
+\includepdf[pages={1}]{Frontespizio.pdf}
+\myemptypage
+
+
+\input{Pagine/Dedica}
+
+\input{Pagine/00- Introduzione}
+
+
+\cleardoublepage
+
+\tableofcontents
+\input{capitoli}
+
+\backmatter
+
+
+\bibliographystyle{unsrtnat}
+\bibliography{bibliografia}
+
+\end{document}
+
+% per citare la bibliografia faccio: \cite{aniba2008knowledge}
+%\myemptypage
+%\hspace{1em} % per aggiungere una linea vuota spazio
